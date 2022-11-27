@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Cucumber</title>
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+	<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20class%3D%22ml-3%20ml-md-0%22%20viewBox%3D%220%200%2040.59%2046.31%22%20width%3D%2240.59%22%20height%3D%2246.31%22%3E%0A%20%20%20%20%3Cg%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20fill%3D%22%2323d96c%22%20fill-rule%3D%22evenodd%22%20d%3D%22M30.283%203.645q-.528-.317-1.08-.593a16.164%2016.164%200%2000-1.154-.518c-.124-.052-.247-.1-.372-.149-.343-.127-.689-.268-1.042-.371a19.427%2019.427%200%2010-9.792%2037.51v5.56c11.676-1.753%2022.016-10.979%2022.787-23.093.459-7.289-3.193-14.73-9.347-18.346z%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20fill%3D%22%23173647%22%20d%3D%22M15.787%2046.307v-5.935A20.472%2020.472%200%201126.959%201.015c.274.08.557.187.832.291l.248.093c.165.064.291.113.417.167.348.137.739.313%201.208.543q.589.295%201.153.633c6.393%203.756%2010.354%2011.518%209.857%2019.316-.763%2012-10.722%2022.122-23.679%2024.067zm4.8-44.214h-.026a18.366%2018.366%200%2000-3.524%2036.408l.85.165v5.18c11.392-2.224%2020.009-11.272%2020.686-21.922.448-7.033-3.1-14.018-8.83-17.383l-.008-.005A14.691%2014.691%200%200027.654%203.5a5.74%205.74%200%2000-.344-.138l-.27-.1a9.49%209.49%200%2000-.708-.249%2018.425%2018.425%200%2000-5.743-.92z%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20fill%3D%22%23173647%22%20fill-rule%3D%22evenodd%22%20d%3D%22M16.666%2010.58a1.8%201.8%200%20011.583.608%204.184%204.184%200%2001.728%201.107c.645%201.422%201.027%203.461.23%204.605a6.334%206.334%200%2001-3.981-3.087%203.236%203.236%200%2001-.347-1.339%201.957%201.957%200%20011.787-1.894zm-5.683%208.025a7.742%207.742%200%20001.218.737%205.789%205.789%200%20004.883-.138%206.116%206.116%200%2000-3.345-3.45%203.664%203.664%200%2000-1.442-.321%201.884%201.884%200%2000-.319%200%201.766%201.766%200%2000-.995%203.172zm6.1%203.433c-.777-.518-2.379-.309-3.312-.292a4.416%204.416%200%2000-1.666.352%203.5%203.5%200%2000-1.218.738%201.817%201.817%200%20001.409%203.171%203.3%203.3%200%20001.442-.321c1.436-.62%203.141-2.32%203.346-3.648zm2.61%202a6.556%206.556%200%2000-3.724%203.506%203.091%203.091%200%2000-.321%201.314%201.907%201.907%200%20003.3%201.346%207.422%207.422%200%2000.7-1.218c.621-1.333.866-3.72.046-4.948zm2.557-7.167a5.941%205.941%200%20003.7-3.167%203.243%203.243%200%2000.319-1.346%201.915%201.915%200%2000-1.794-1.954%201.832%201.832%200%2000-1.6.641%207.382%207.382%200%2000-.705%201.218c-.62%201.434-.842%203.48.081%204.603zm4.208%2012.115a3.244%203.244%200%2000-.321-1.345%205.869%205.869%200%2000-3.554-3.269%205.386%205.386%200%2000-.226%204.711%204.147%204.147%200%2000.7%201.121c1.133%201.23%203.505.32%203.402-1.218zm4.2-6.28a7.466%207.466%200%2000-1.217-.7%204.425%204.425%200%2000-1.666-.352%206.4%206.4%200%2000-3.188.555%205.959%205.959%200%20003.316%203.386%203.672%203.672%200%20001.442.32%201.8%201.8%200%20001.31-3.209z%22%2F%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E">
+	<style>
+.cucumber-react .cucumber-status--passed {
+  color: #2CB14A;
+}
+.cucumber-react .cucumber-status--skipped {
+  color: #00A0CC;
+}
+.cucumber-react .cucumber-status--pending {
+  color: #FFAD33;
+}
+.cucumber-react .cucumber-status--undefined {
+  color: #FFAD33;
+}
+.cucumber-react .cucumber-status--ambiguous {
+  color: #F4EBFD;
+}
+.cucumber-react .cucumber-status--failed {
+  color: #BB0000;
+}
+.cucumber-react .cucumber-status--unknown {
+  color: #B6BECB;
+}
+.cucumber-react h1, .cucumber-react h2, .cucumber-react h3 {
+  padding: 0;
+  margin: 0;
+}
+.cucumber-react a {
+  color: inherit;
+}
+.cucumber-react .gherkin-document-list {
+  font: 14px "Open Sans", sans-serif;
+  color: #161C24;
+  background: #fff;
+  overflow-x: hidden;
+}
+.cucumber-react .cucumber-title {
+  margin-top: 0.3em;
+  margin-bottom: 0;
+  display: inline-block;
+}
+.cucumber-react .cucumber-title__keyword {
+  font-weight: bold;
+}
+.cucumber-react .cucumber-title__text {
+  font-weight: normal;
+}
+.cucumber-react .cucumber-tags {
+  padding: 0;
+  margin-bottom: 0;
+}
+.cucumber-react .cucumber-tags .cucumber-tag {
+  display: inline;
+  list-style-type: none;
+  padding: 4px 8px 4px 8px;
+  margin-right: 6px;
+  background-color: #FFFFFF;
+  border-radius: 6px;
+}
+.cucumber-react .cucumber-feature__icon {
+  padding-top: 0.35em;
+  padding-right: 0.5em;
+}
+.cucumber-react .cucumber-description,
+.cucumber-react .cucumber-children {
+  margin-left: 1em;
+}
+.cucumber-react .cucumber-feature,
+.cucumber-react .cucumber-rule,
+.cucumber-react .cucumber-scenario,
+.cucumber-react .cucumber-background {
+  margin-bottom: 1em;
+}
+.cucumber-react .cucumber-steps {
+  list-style-type: none;
+  padding-left: 10px;
+}
+.cucumber-react .cucumber-steps .cucumber-step {
+  display: flex;
+}
+.cucumber-react .cucumber-steps .cucumber-step__status {
+  padding-top: 0.2em;
+  padding-right: 0.5em;
+}
+.cucumber-react .cucumber-steps .cucumber-step__content {
+  flex-grow: 1;
+  max-width: calc(100% - 1.5em);
+}
+.cucumber-react .cucumber-steps .cucumber-step__keyword {
+  font-weight: bold;
+}
+.cucumber-react .cucumber-steps .cucumber-step__text {
+  font-weight: normal;
+}
+.cucumber-react .cucumber-steps .cucumber-step__param {
+  font-weight: normal;
+  font-style: italic;
+}
+.cucumber-react .cucumber-table {
+  border-collapse: collapse;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+.cucumber-react .cucumber-table__header-cell {
+  border: 1px solid #4B5662;
+  padding: 0.3em;
+}
+.cucumber-react .cucumber-table__cell {
+  border: 1px solid #4B5662;
+  padding: 0.3em;
+}
+.cucumber-react .cucumber-table__cell__status {
+  padding: 0.5em 3px 3px 3px;
+}
+.cucumber-react .cucumber-table__cell__step {
+  flex-grow: 1;
+}
+.cucumber-react .cucumber-code {
+  padding: 0.25em;
+  background-color: #ebebeb;
+}
+.cucumber-react .cucumber-error {
+  padding: 0.5em;
+  margin: 0;
+  overflow-x: auto;
+}
+.cucumber-react .cucumber-no-documents {
+  font: 14px "Open Sans", sans-serif;
+}
+.cucumber-react .cucumber-attachment__icon {
+  margin-right: 0.5em;
+}
+.cucumber-react .cucumber-attachment__image {
+  max-width: 100%;
+  margin-top: 1em;
+}
+.cucumber-react .cucumber-attachment__text {
+  background-color: #ebebeb;
+  padding: 0.5em;
+  overflow-x: auto;
+}
+.cucumber-react .cucumber-anchor {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-top: 0.3em;
+}
+.cucumber-react .cucumber-anchor__link {
+  opacity: 0;
+  transition: all 0.35s ease-in-out;
+  position: absolute;
+  left: -20px;
+  display: flex;
+  align-items: center;
+}
+.cucumber-react .cucumber-anchor__icon {
+  margin-right: 0.5em;
+}
+.cucumber-react .cucumber-anchor:hover a {
+  opacity: 1;
+  width: max-content;
+  transition: all 0.35s ease-in-out;
+}
+.cucumber-react .cucumber-anchor > * {
+  height: 100%;
+  margin-top: 0px;
+}
+
+.cucumber-report-header {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  font: 11px "Open Sans", sans-serif;
+  margin-bottom: 1em;
+}
+.cucumber-report-header > * {
+  padding: 1em;
+}
+.cucumber-report-header .cucumber-status-filter {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.cucumber-report-header .cucumber-status-filter table {
+  width: 100%;
+}
+.cucumber-report-header .cucumber-execution-data {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.cucumber-report-header .cucumber-search-bar {
+  border-right: 0;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-search {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 9fr 1fr;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-search input {
+  padding: 0.4em;
+  border-radius: 0;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-search button {
+  height: 2.2em;
+  padding-left: 0.6em;
+  padding-right: 0.6em;
+}
+.cucumber-report-header .cucumber-search-bar p.help {
+  font-size: 80%;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul {
+  display: inline;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul li {
+  list-style-type: none;
+  display: inline-block;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul li input {
+  display: inline-block;
+  width: auto;
+  height: 0.6em;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul li label {
+  padding-right: 1em;
+}
+
+@media only screen and (min-width: 600px) {
+  .cucumber-report-header {
+    grid-template-columns: 1fr 1fr;
+  }
+  .cucumber-report-header .cucumber-status-filter {
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .cucumber-report-header .cucumber-search-bar {
+    grid-column: 1/-1;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .cucumber-report-header {
+    grid-template-columns: 1fr 1fr 2fr;
+  }
+  .cucumber-report-header .cucumber-status-filter {
+    border-bottom: 0;
+  }
+  .cucumber-report-header .cucumber-execution-data {
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 0;
+  }
+  .cucumber-report-header .cucumber-search-bar {
+    grid-column: auto;
+  }
+}
+.accordion {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+}
+
+.accordion__item + .accordion__item {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.accordion__button {
+    background-color: #f4f4f4;
+    color: #444;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    border: none;
+}
+
+.accordion__button:hover {
+    background-color: #ddd;
+}
+
+.accordion__button:before {
+    display: inline-block;
+    content: '';
+    height: 10px;
+    width: 10px;
+    margin-right: 12px;
+    border-bottom: 2px solid currentColor;
+    border-right: 2px solid currentColor;
+    transform: rotate(-45deg);
+}
+
+.accordion__button[aria-expanded='true']::before,
+.accordion__button[aria-selected='true']::before {
+    transform: rotate(45deg);
+}
+
+.accordion__panel {
+    padding: 20px;
+    animation: fadein 0.35s ease-in;
+}
+
+	</style>
+</head>
+<body>
+<div id="content">
+</div>
+<script>
+window.CUCUMBER_MESSAGES = [{"meta":{"protocolVersion":"15.0.0","implementation":{"name":"cucumber-jvm","version":"6.11.0"},"runtime":{"name":"Java HotSpot(TM) 64-Bit Server VM","version":"25.211-b12"},"os":{"name":"Windows 10"},"cpu":{"name":"amd64"}}},{"testRunStarted":{"timestamp":{"seconds":"1667144693","nanos":204000000}}},{"source":{"uri":"classpath:features/dropBox.feature","data":"@dropBox\nFeature: IT Solution Page to be loaded from dropBox HomePage\n    Background:\n        Given I am on dropBox home page\n\n    Scenario: User able to view dropBox solution for IT department\n        And  verify the user in dropBox home\n        When user mouse hover on solution link\n        And  user click on IT service link\n        Then verify user landing into the IT service page\n\n\n","mediaType":"text/x.cucumber.gherkin+plain"}},{"gherkinDocument":{"uri":"classpath:features/dropBox.feature","feature":{"location":{"line":2,"column":1},"tags":[{"location":{"line":1,"column":1},"name":"@dropBox","id":"93088e2f-aef4-472c-9a96-4175934d8299"}],"language":"en","keyword":"Feature","name":"IT Solution Page to be loaded from dropBox HomePage","children":[{"background":{"location":{"line":3,"column":5},"keyword":"Background","steps":[{"location":{"line":4,"column":9},"keyword":"Given ","text":"I am on dropBox home page","id":"319fac57-6967-4fb7-871e-0f89fbe1b259"}],"id":"42f802b2-680e-472b-9f81-c27ca15f2efa"}},{"scenario":{"location":{"line":6,"column":5},"keyword":"Scenario","name":"User able to view dropBox solution for IT department","steps":[{"location":{"line":7,"column":9},"keyword":"And ","text":"verify the user in dropBox home","id":"6de421d9-f8e1-4a09-a295-9a1c36b48b01"},{"location":{"line":8,"column":9},"keyword":"When ","text":"user mouse hover on solution link","id":"053673f4-cfbf-40ba-993c-fc2036978d52"},{"location":{"line":9,"column":9},"keyword":"And ","text":"user click on IT service link","id":"f8af0240-91ee-488c-86d4-5d9ed9a331a8"},{"location":{"line":10,"column":9},"keyword":"Then ","text":"verify user landing into the IT service page","id":"da6b52ac-e960-4fc8-adb9-2ba523c732db"}],"id":"30b17a5f-8f75-4522-af27-1742903a00ae"}}]}}},{"pickle":{"id":"09acf756-5bd6-4623-859c-15d5dc6b5317","uri":"classpath:features/dropBox.feature","name":"User able to view dropBox solution for IT department","language":"en","steps":[{"text":"I am on dropBox home page","id":"8facebed-018f-4d0a-8907-93a86a082b2a","astNodeIds":["319fac57-6967-4fb7-871e-0f89fbe1b259"]},{"text":"verify the user in dropBox home","id":"6b60abc5-32d4-40ef-8ce3-6b26156a55c3","astNodeIds":["6de421d9-f8e1-4a09-a295-9a1c36b48b01"]},{"text":"user mouse hover on solution link","id":"5c21ae68-27e8-4e15-a41c-b711c7bc84c6","astNodeIds":["053673f4-cfbf-40ba-993c-fc2036978d52"]},{"text":"user click on IT service link","id":"5de09aa0-7a29-4fee-902c-ee208275e1e9","astNodeIds":["f8af0240-91ee-488c-86d4-5d9ed9a331a8"]},{"text":"verify user landing into the IT service page","id":"7cd0335b-cc51-4617-9d68-a664905ff8dd","astNodeIds":["da6b52ac-e960-4fc8-adb9-2ba523c732db"]}],"tags":[{"name":"@dropBox","astNodeId":"93088e2f-aef4-472c-9a96-4175934d8299"}],"astNodeIds":["30b17a5f-8f75-4522-af27-1742903a00ae"]}},{"source":{"uri":"classpath:features/khanAcademy.feature","data":"@khan\nFeature: KhanAcademy HomePage\n    Background:\n        Given I am on khanAcademy home page\n\n    Scenario: parent or student can able to view khanacademy offered course details under course link in the home page\n        And verify the user in kahanAcademy home\n        When user clicks on course link\n        And  user click on computer science course link\n        And user landed in to the computer science course\n        And user select Algorithms link\n        Then user able to view Algorithms details\n\n","mediaType":"text/x.cucumber.gherkin+plain"}},{"gherkinDocument":{"uri":"classpath:features/khanAcademy.feature","feature":{"location":{"line":2,"column":1},"tags":[{"location":{"line":1,"column":1},"name":"@khan","id":"ab3c2a3e-fdc7-4edd-8131-e241750db288"}],"language":"en","keyword":"Feature","name":"KhanAcademy HomePage","children":[{"background":{"location":{"line":3,"column":5},"keyword":"Background","steps":[{"location":{"line":4,"column":9},"keyword":"Given ","text":"I am on khanAcademy home page","id":"f8ad827b-a61e-45a9-95cb-d9ba7bdb1ba3"}],"id":"92a8b68a-16c1-40f4-b4cc-4c15d3f559cc"}},{"scenario":{"location":{"line":6,"column":5},"keyword":"Scenario","name":"parent or student can able to view khanacademy offered course details under course link in the home page","steps":[{"location":{"line":7,"column":9},"keyword":"And ","text":"verify the user in kahanAcademy home","id":"20829847-1f71-45dc-9e01-7e050d23337d"},{"location":{"line":8,"column":9},"keyword":"When ","text":"user clicks on course link","id":"71f525fa-e655-4157-ab79-a35c932e8789"},{"location":{"line":9,"column":9},"keyword":"And ","text":"user click on computer science course link","id":"15b5c204-e6be-4817-b5ae-2b66be7d80a4"},{"location":{"line":10,"column":9},"keyword":"And ","text":"user landed in to the computer science course","id":"abf9dd38-2a85-4e4e-b3bd-7c17dcb77ca6"},{"location":{"line":11,"column":9},"keyword":"And ","text":"user select Algorithms link","id":"65ff1e57-8f32-4cb0-add1-c87183e7dde2"},{"location":{"line":12,"column":9},"keyword":"Then ","text":"user able to view Algorithms details","id":"e0b27f93-b8a7-4ead-a62e-8ef8300ff830"}],"id":"e12b5f99-d595-43ce-90ab-f0ac86f108fb"}}]}}},{"pickle":{"id":"21cf6eb5-d886-4e83-a1a6-762c2de58929","uri":"classpath:features/khanAcademy.feature","name":"parent or student can able to view khanacademy offered course details under course link in the home page","language":"en","steps":[{"text":"I am on khanAcademy home page","id":"f01fc455-f891-4805-afec-342fb05ceee6","astNodeIds":["f8ad827b-a61e-45a9-95cb-d9ba7bdb1ba3"]},{"text":"verify the user in kahanAcademy home","id":"39e8f71f-9f6d-4d3a-8a92-f94915414d6e","astNodeIds":["20829847-1f71-45dc-9e01-7e050d23337d"]},{"text":"user clicks on course link","id":"3b434684-2fde-4612-8a0c-089f360db34a","astNodeIds":["71f525fa-e655-4157-ab79-a35c932e8789"]},{"text":"user click on computer science course link","id":"1974dbcf-0615-4ee5-8580-7ae006eb7cff","astNodeIds":["15b5c204-e6be-4817-b5ae-2b66be7d80a4"]},{"text":"user landed in to the computer science course","id":"9a002192-d918-45aa-911a-86842be708ca","astNodeIds":["abf9dd38-2a85-4e4e-b3bd
