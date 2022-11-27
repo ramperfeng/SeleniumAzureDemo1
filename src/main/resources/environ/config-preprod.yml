@@ -1,0 +1,7 @@
+
+properties:
+  browser: "chrome"
+  environment: "preprod"
+  applitools: "true"
+  previewUrl: "https://preprod.pams.co.nz"
+  envURL: "https://preprod.pams.co.nz"

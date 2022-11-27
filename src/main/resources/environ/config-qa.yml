@@ -1,0 +1,6 @@
+
+properties:
+  browser: "chrome"
+  environment: "qa"
+  applitools: "true"
+  envURL: "https://www.dropbox.com/"
