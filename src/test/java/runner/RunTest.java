@@ -25,18 +25,10 @@ import java.util.Objects;
 @CucumberOptions(
     features = "classpath:features",
     glue = "web.UI.automation.stepDefinitions"
-    //plugin = { "summary", "json:target/cucumber-json.json",
-   // "tech.grasshopper.AllureCucumberMappingPlugin:target/cucumber-allure.json" }
-   //plugin = {"com.cucumber.listener.ExtentCucumberFormatter:target/cucumber-reports/report.html"}
-    //plugin = {"com.cucumber.listener.ExtentCucumberFormatter:target/html/ExtentReport.html"}
     ,plugin={"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
-    //plugin = {"pretty","com.vimalselvam.cucumber.listener.ExtentCucumberFormatter:path/report.html","html:test-output","json:json_output/cucumber.json","junit:junit_output/cucumber.xml"} //to generate diff types of reporting
     ,monochrome =true //display the console output in a proper readable format
-    ,strict=true //it will check if any step is not defined in step definition file
     ,dryRun = false,
-
     tags = "@dropBox"
-
 )
 
 public class RunTest {
