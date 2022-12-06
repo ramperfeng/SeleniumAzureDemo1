@@ -4,7 +4,7 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/java
 
 trigger:
-- main
+- master
 
 pool:
   vmImage: ubuntu-latest
@@ -12,14 +12,15 @@ pool:
 steps:
 - task: Maven@3
   inputs:
+     
     mavenPomFile: 'pom.xml'
     mavenOptions: '-Xmx3072m'
     javaHomeOption: 'JDKVersion'
     jdkVersionOption: '1.8'
     jdkArchitectureOption: 'x64'
     publishJUnitResults: true
-    testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    goals: 'package'
+    testResultsFiles: '$(Pipeline.Workspace)/s/collections/**'
+    goals: 'clean test'
 - task: CopyFiles@2
   inputs:
     Contents: '**'
@@ -29,3 +30,8 @@ steps:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'drop'
     publishLocation: 'Container'
+
+- task: PublishPipelineArtifact@1
+  inputs:
+    targetPath: '$(Pipeline.Workspace)/s/collections/report'
+    publishLocation: 'pipeline'
