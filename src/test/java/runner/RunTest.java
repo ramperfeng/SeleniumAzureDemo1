@@ -1,21 +1,15 @@
 package runner;
 
-
-
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
-import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
-
-import com.vimalselvam.cucumber.listener.Reporter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.env.OriginTrackedMapPropertySource;
 import org.springframework.boot.env.YamlPropertySourceLoader;
 import org.springframework.core.io.InputStreamResource;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.Map;
 import java.util.Objects;
@@ -24,11 +18,11 @@ import java.util.Objects;
 @RunWith(Cucumber.class)
 @CucumberOptions(
     features = "classpath:features",
-    glue = "web.UI.automation.stepDefinitions"
-    ,plugin={"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
-    ,monochrome =true //display the console output in a proper readable format
-    ,dryRun = false,
-    tags = "@dropBox"
+    glue = "web.UI.automation.stepDefinitions",
+    plugin = {
+        "html:target/reports.html", "json:target/cucumber-reports/Cucumber.json"
+    }
+    ,tags = "@dropBox"
 )
 
 public class RunTest {
@@ -51,31 +45,18 @@ public class RunTest {
         logger.info("Logs Initiated for test environment:" + environ);
         final String propertySourceName = "basic";
         new YamlPropertySourceLoader().load(propertySourceName, new InputStreamResource(
-                        Objects.requireNonNull(RunTest.class.getClassLoader().getResourceAsStream("environ//config-" + environ + ".yml"))))
-                .stream()
-                .filter(propertySource -> propertySource instanceof OriginTrackedMapPropertySource)
-                .map(propertySource -> (OriginTrackedMapPropertySource) propertySource)
-                .filter(originTrackedMapPropertySource -> originTrackedMapPropertySource.getName().equals(propertySourceName))
-                .forEach(
-                        originTrackedMapPropertySource -> {
-                            for (Map.Entry<String, Object> props : originTrackedMapPropertySource.getSource().entrySet()) {
+                Objects.requireNonNull(RunTest.class.getClassLoader().getResourceAsStream("environ//config-" + environ + ".yml"))))
+            .stream()
+            .filter(propertySource -> propertySource instanceof OriginTrackedMapPropertySource)
+            .map(propertySource -> (OriginTrackedMapPropertySource) propertySource)
+            .filter(originTrackedMapPropertySource -> originTrackedMapPropertySource.getName().equals(propertySourceName))
+            .forEach(
+                originTrackedMapPropertySource -> {
+                    for (Map.Entry<String, Object> props : originTrackedMapPropertySource.getSource().entrySet()) {
 //                        logger.debug("property `{}` = `{}`", props.getKey(), props.getValue().toString());
-                                System.setProperty(props.getKey(), props.getValue().toString());
-                            }
-                        }
-                );
+                        System.setProperty(props.getKey(), props.getValue().toString());
+                    }
+                }
+            );
     }
-
-    @AfterClass
-    public static void setup()
-    {
-        Reporter.loadXMLConfig(new File("src/test/resources/extent-config.xml"));
-        //Reporter.setSystemInfo("Test User", System.getProperty("user.name"));
-        Reporter.setSystemInfo("User Name", "AJ");
-        Reporter.setSystemInfo("Application Name", "Test App ");
-        Reporter.setSystemInfo("Operating System Type", System.getProperty("os.name").toString());
-        Reporter.setSystemInfo("Environment", "Production");
-        Reporter.setTestRunnerOutput("Test Execution Cucumber Report");
-    }
-
 }

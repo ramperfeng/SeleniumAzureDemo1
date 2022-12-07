@@ -8,5 +8,3 @@ Feature: IT Solution Page to be loaded from dropBox HomePage
         When user mouse hover on solution link
         And  user click on IT service link
         Then verify user landing into the IT service page
-
-
