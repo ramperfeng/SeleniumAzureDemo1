@@ -20,11 +20,11 @@ public class dropBoxHomePage {
     private FindWebElement find;
     private WebDriver webDriver;
     private Eyess eyes;
-    @FindBy(xpath = "//*[@id="nav-item-horizontal-2-controller"]/span")
+    @FindBy(xpath = "//*[@id=\"nav-item-horizontal-2-controller\"]/span")
     private WebElement solutionLink;
     @FindBy(xpath = "//*[@id=\"nav-item-horizontal-1\"]/span")
     private WebElement productsLink;
-    @FindBy(xpath = "//*[@id="nav-item-horizontal-2-controlled"]/div/div/div/div/ul/li[5]/a")
+    @FindBy(xpath = "//*[@id=\"nav-item-horizontal-2-controlled\"]/div/div/div/div/ul/li[5]/a")
     private WebElement ITSolutionLink;
     @FindBy(xpath ="/html/body/div[1]/div/div/nav/div[1]/div[1]/div/ul/li[3]/div/div/div/div/div/ul/li[5]/a")
     private WebElement pricing;
